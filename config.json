@@ -1,1 +1,38 @@
-
+cat > config.json << 'EOF'
+{
+  "database": {
+    "host": "localhost",
+    "user": "your_db_user",
+    "password": "your_db_password",
+    "database": "your_wp_db",
+    "table_prefix": "wp_"
+  },
+  "feed_settings": {
+    "output_file": "/path/to/your/wp-content/feed.xml",
+    "log_file": "logs/feed_generation.log",
+    "products_per_page": 2000
+  },
+  "store_details": {
+    "domain": "https://yourdomain.com"
+  },
+  "server_load_reduction": {
+    "enabled": true,
+    "pause_seconds_per_chunk": 5
+  },
+  "test_run": {
+    "enabled": false,
+    "product_limit": 100
+  },
+  "regional_settings": {
+    "country": "IN",
+    "currency": "INR",
+    "shipping": {
+      "service": "Standard Shipping",
+      "price": "50.00"
+    },
+    "tax": {
+      "rate": "18.00"
+    }
+  }
+}
+EOF
