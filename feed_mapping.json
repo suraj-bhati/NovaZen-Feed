@@ -1,1 +1,26 @@
-
+cat > feed_mapping.json << 'EOF'
+{
+  "g:id": { "source": "ID", "xml_tag": "g:id" },
+  "g:item_group_id": { "source": "ID", "xml_tag": "g:item_group_id" },
+  "g:title": { "source": "post_title", "xml_tag": "g:title" },
+  "g:description": { "source": "post_content", "xml_tag": "g:description" },
+  "g:product_type": { "source": "category_path", "xml_tag": "g:product_type" },
+  "g:google_product_category": { "source": "fixed", "value": "3702", "xml_tag": "g:google_product_category" },
+  "link": { "source": "guid", "xml_tag": "link" },
+  "g:canonical_link": { "source": "guid", "xml_tag": "g:canonical_link" },
+  "g:image_link": { "source": "thumbnail_url", "xml_tag": "g:image_link" },
+  "g:additional_image_link_1": { "source": "additional_image_link_1", "xml_tag": "g:additional_image_link" },
+  "g:additional_image_link_2": { "source": "additional_image_link_2", "xml_tag": "g:additional_image_link" },
+  "g:additional_image_link_3": { "source": "additional_image_link_3", "xml_tag": "g:additional_image_link" },
+  "g:condition": { "source": "fixed", "value": "new", "xml_tag": "g:condition" },
+  "g:availability": { "source": "_stock_status", "xml_tag": "g:availability", "value_map": { "instock": "in_stock", "outofstock": "out_of_stock" } },
+  "g:price": { "source": "_regular_price", "xml_tag": "g:price", "suffix": " INR" },
+  "g:sale_price": { "source": "_sale_price", "xml_tag": "g:sale_price", "suffix": " INR" },
+  "g:sale_price_effective_date": { "source": "fixed", "value": "2025-06-06T16:19:00+05:30/2025-07-21T23:59:59+05:30", "xml_tag": "g:sale_price_effective_date" },
+  "g:brand": { "source": "fixed", "value": "Seminest", "xml_tag": "g:brand" },
+  "g:mpn": { "source": "_sku", "xml_tag": "g:mpn" },
+  "g:identifier_exists": { "source": "fixed", "value": "yes", "xml_tag": "g:identifier_exists" },
+  "g:shipping": { "source": "regional:shipping", "xml_tag": "g:shipping" },
+  "g:tax": { "source": "regional:tax", "xml_tag": "g:tax" }
+}
+EOF
